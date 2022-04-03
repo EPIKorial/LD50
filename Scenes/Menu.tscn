@@ -21,3 +21,6 @@ margin_top = 298.378
 margin_right = 366.067
 margin_bottom = 338.378
 text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
