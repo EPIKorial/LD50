@@ -1,0 +1,5 @@
+res://default_env.tres
+res://Scenes/Menu.tscn
+res://Scripts/PlayerController.gd
+res://Scripts/ScrollingSegment.gd
+res://Scenes/Game.tscn

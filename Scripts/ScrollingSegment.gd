@@ -2,13 +2,13 @@ extends Node2D
 
 var jumpPosition = 615
 
-export var speed = 1
+@export var speed = 1
 
 var bgs = []
 var bgPathRoot = "res://Prefabs/Background"
 var bgPathEnd = ".tscn"
 
-onready var rng = RandomNumberGenerator.new()
+@onready var rng = RandomNumberGenerator.new()
 
 func _ready():
 	rng.randomize()
@@ -25,17 +25,17 @@ func _process(delta):
 	
 	if bgs.front().position.y >= jumpPosition:
 		bgs.front().position.y = -jumpPosition
-		var newBG = load(bgPathRoot+rand+bgPathEnd).instance()
+		var newBG = load(bgPathRoot+rand+bgPathEnd).instantiate()
 		newBG.position = bgs.front().position
 		bgs.append(newBG)
 		add_child(newBG)
 		if bgs.size() > 2:
-			bgs.remove(0)
+			bgs.remove_at(0)
 	if bgs.back().position.y >= jumpPosition:
 		bgs.back().position.y = -jumpPosition
-		var newBG = load(bgPathRoot+rand+bgPathEnd).instance()
+		var newBG = load(bgPathRoot+rand+bgPathEnd).instantiate()
 		newBG.position = bgs.back().position
 		bgs.append(newBG)
 		add_child(newBG)
 		if bgs.size() > 2:
-			bgs.remove(1)
+			bgs.remove_at(1)

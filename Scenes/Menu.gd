@@ -10,8 +10,8 @@ extends Control
 func _ready():
 	pass # Replace with function body.
 
-	$Button.connect("pressed", self, "_button_pressed")
+	$Button.connect("pressed", Callable(self, "_button_pressed"))
 
 func _button_pressed():
-	get_tree().change_scene("res://Scenes/Game.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
 
